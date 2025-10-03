@@ -137,27 +137,7 @@ public class NumberTriangle {
             System.out.println(line);
             String[] current = line.trim().split("\\s+");
             List<NumberTriangle> currentRow = new ArrayList<>();
-            for (String s : current) {
-                currentRow.add(new NumberTriangle(Integer.parseInt(s)));
-            }
 
-            if (prevRow != null) {
-                for(int i = 0; i < currentRow.size(); i++){
-                    if(i < prevRow.size()){
-                        prevRow.get(i).setLeft(currentRow.get(i));
-                    }
-                    if(i > 0){
-                        prevRow.get(i-1).setRight(currentRow.get(i));
-                    }
-                }
-            }
-            else{
-                top = currentRow.get(0);
-            }
-
-            //read the next line
-            prevRow = currentRow;
-            line = br.readLine();
 
         }
 
